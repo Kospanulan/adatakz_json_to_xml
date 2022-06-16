@@ -22,10 +22,12 @@ def json_to_xml(json_data):
         et.SubElement(exp, "id_card").text = str(elem["id_card"]) if "id_card" in elem else ""
         et.SubElement(exp, "Country").text = elem["Country"] if "Country" in elem else ""
 
+    # return et.ElementTree(root) #for testing with files
     return et.tostring(root, encoding='utf8').decode('utf8')
 
-# with open("test_json_file.json") as js:
+
+# with open("files/test_json_file.json") as js:
 #     data = json.load(js)
 #
 # res = json_to_xml(data)
-# res.write("test_xml.xml")
+# res.write("files/test_xml.xml")
